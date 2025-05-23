@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Rotate Square
+    link(rel="shortcut icon", href="assets/favicon.png", type="image/x-icon")
+    link(rel="stylesheet", href="style.css")
+  body
+    .container
+      - for (let i = 0; i < 8; i++)
+        div.square(style=`--d:${i}`)
+    script.
+      const $container = document.querySelector(".container");
+      $container.addEventListener("click", e => {
+        $container.classList.toggle("more-border");
+      });
